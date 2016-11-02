@@ -1,18 +1,24 @@
 var $ = require('jquery');
+var Backbone = require('backbone');
+require('./router');
+
+$(function(){
+  Backbone.history.start();
+});
 
 // Setting up the Parse Server with Application Key and Rest Key to talk to server
-$.ajaxSetup({
-  beforeSend: function(xhr){
-    xhr.setRequestHeader('X-Parse-Application-Id','ryansparseserver');
-    xhr.setRequestHeader('X-Parse-REST-API-Key','ryansapikey');
-  }
-});
-// Pulling in the Server to the document
-var url = 'https://thefraz.herokuapp.com/';
-var resultPromise = $.ajax(url).then(function(data){
-  console.log(data);
-});
-
+// $.ajaxSetup({
+//   beforeSend: function(xhr){
+//     xhr.setRequestHeader('X-Parse-Application-Id','ryansparseserver');
+//     xhr.setRequestHeader('X-Parse-REST-API-Key','ryansapikey');
+//   }
+// });
+// // Pulling in the Server to the document
+// var url = 'https://thefraz.herokuapp.com/';
+// var resultPromise = $.ajax(url).then(function(data){
+//   console.log(data);
+// });
+//
 
 // $('#signup').on('submit',function(e){
 //   e.preventDefault();
