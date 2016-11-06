@@ -131,11 +131,11 @@ var LoginContainer = React.createClass({
     // console.log(userInfo);
     var self = this;
     var url = 'https://thefraz.herokuapp.com/';
-  console.log('testing');
+  // console.log('testing');
     $.ajax(url + 'login?username=' + username + '&password=' + password).then(function(response){
       localStorage.setItem('username', response.username);
       localStorage.setItem('token', response.sessionToken);
-      localStorage.setItem('token', response.password);
+      // localStorage.setItem('token', response.password);
       if (response.sessionToken) {
         self.props.router.navigate('chat/', {trigger: true});
       };
@@ -145,7 +145,7 @@ var LoginContainer = React.createClass({
   handleSignUp: function(userData){
     console.log(userData);
     $.post('https://thefraz.herokuapp.com/users', userData).then(function(response){
-      console.log(response);
+      // console.log(response);
     });
   },
 
