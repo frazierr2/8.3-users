@@ -6,12 +6,15 @@ var Messages = Backbone.Model.extend({
 
 var MessagesCollection = Backbone.Collection.extend({
   model: Messages,
-  url: 'https://thefraz.herokuapp.com/classes/Message'
-
+  url: 'https://thefraz.herokuapp.com/classes/message',
+  parse: function(data){
+    // console.log('messages', data.results);
+    return data.results;
+  }
 });
 
 
-module.exorts = {
+module.exports = {
   Messages: Messages,
   MessagesCollection: MessagesCollection
 };
