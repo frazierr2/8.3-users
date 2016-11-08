@@ -98,14 +98,14 @@ var ChatList = React.createClass({
 },
 componentWillMount: function(){
   var self = this;
-  $.ajax('https://thefraz.herokuapp.com/classes/Message').then(displayData);
+  $.get('https://thefraz.herokuapp.com/classes/Message').then(displayData);
   function displayData(data){
     self.setState({message: data.results});
   }
 },
 render: function(){
   var messages = this.state.message;
-  console.log(messages);
+  // console.log(messages);
   var messageList = messages.map(function(data){
     return (
       <tr key={data.objectId}>
@@ -159,7 +159,7 @@ var ChatContainer = React.createClass({
       'username': messageData.username,
       'message': messageData.message
     };
-    $.post('https://thefraz.herokuapp.com/classes/Message', data).then(function(response){
+    $.post('https://thefraz.herokuapp.com/classes/message', data).then(function(response){
       //console.log(response);
     });
   },

@@ -6,7 +6,6 @@ var Messages = Backbone.Model.extend({
 
 var MessagesCollection = Backbone.Collection.extend({
   model: Messages,
-
   url: 'https://thefraz.herokuapp.com/classes/Message'
 
 });
